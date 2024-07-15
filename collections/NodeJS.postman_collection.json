@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "4511ede5-6726-4084-9335-fda0765c32b6",
+		"name": "NodeJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36647770"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"daniel123\",\r\n    \"user_name\":\"danielAndrade12344\",\r\n    \"password\":\"123\",\r\n    \"password_hash\": \"123\",\r\n    \"email\":\"danielAndrade@gmail.co3m\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"daniel123\",\r\n    \"user_name\":\"danielAndrade12344\",\r\n    \"password\":\"123\",\r\n    \"password_hash\": \"123\",\r\n    \"email\":\"danielAndrade@gmail.co3m\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"daniel123\",\r\n    \"user_name\":\"danielAndrade12344\",\r\n    \"password\":\"123\",\r\n    \"password_hash\": \"123\",\r\n    \"email\":\"danielAndrade@gmail.co3m\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"daniel123\",\r\n    \"avatar\": \"teste\",\r\n    \"bio\": \"Descrição da bio\",\r\n    \"gender\": \"Masculino\",\r\n    \"old_password\": \"123\",\r\n    \"new_password\": \"123456\",\r\n    \"confirm_new_password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/user",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Authentication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"daniel123\",\r\n    \"user_name\":\"danielAndrade12344\",\r\n    \"password\":\"123\",\r\n    \"password_hash\": \"123\",\r\n    \"email\":\"danielAndrade@gmail.co3m\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/auth",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Upload",
+			"item": [
+				{
+					"name": "Upload",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{API_URL}}/health",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
