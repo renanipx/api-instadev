@@ -49,6 +49,62 @@ class PostController {
 
     return res.status(200).json({ message: "Post deleted!" });
   }
+
+  async update(req, res) {
+    const { id } = req.params;
+
+    const verifyPost = await Posts.findOne({
+      where: {
+        id: id,
+      },
+    });
+
+    if (!verifyPost) {
+      return res.status(404).json({ message: "Post does not exists" });
+    }
+
+    if (verifyPost.author_id != req.userId) {
+      return res
+        .status(401)
+        .json({ message: "You don't have permission to delete this post!" });
+    }
+
+    const postUpdate = await Posts.update(req.body, { where: { id } });
+
+    if (!postUpdate) {
+      return res.status(400).json({ message: "Failed to update this post!" });
+    }
+
+    return res.status(200).json({ message: "Posts updated!" });
+  }
+
+  async addLike(req, res) {
+    const { id } = req.params;
+    const verifyPost = await Posts.findOne({
+      where: {
+        id: id,
+      },
+    });
+
+    if (!verifyPost) {
+      return res.status(404).json({ message: "Post does not exists" });
+    }
+
+    const postUpdate = await Posts.update(
+      { number_likes: verifyPost.number_likes + 1 },
+      { where: { id } }
+    );
+
+    if (!postUpdate) {
+      return res.status(400).json({ message: "Failed to update this post!" });
+    }
+
+    return res
+      .status(200)
+      .json({
+        message: "Like storaged!"
+      });
+  }
 }
 
 module.exports = new PostController();
